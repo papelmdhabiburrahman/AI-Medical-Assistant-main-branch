@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+python-multipart
+Pillow
+
+pandas
+numpy
+
+openpyxl
+scipy
+scikit-learn
+statsmodels
+matplotlib
+seaborn
+plotly
+duckdb

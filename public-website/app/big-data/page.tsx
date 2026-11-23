@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Page(){return <main className='min-h-screen bg-slate-950 p-10 text-white'><Link href='/platform' className='text-cyan-300'>← Platform</Link><h1 className='my-6 text-4xl font-bold'>Big Data Analytics</h1><p className='text-amber-300'>Planned — not implemented</p><p className='my-4'>Partitioned processing and job queues</p><p>Research prototype. No patient data.</p></main>}
