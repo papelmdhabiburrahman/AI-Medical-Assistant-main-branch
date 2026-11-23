@@ -1,0 +1,140 @@
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.book {
+  width: 100%;
+  filter: drop-shadow(0 22px 18px #082f3540);
+}
+
+.cover {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  background: linear-gradient(
+    90deg,
+    #527f84,
+    #143b43 12%,
+    #20525b 85%,
+    #659298
+  );
+  border: 2px solid #71999b;
+  border-radius: 4px;
+}
+
+.cover h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(22px, 4vw, 40px);
+  margin: 25px 0;
+}
+
+.cover small,
+.cover span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #b7dbd9;
+}
+
+.page {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(
+    90deg, #ffffff, #e0ece9
+  );
+  color: #164e55;
+}
+
+.page h2 {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  margin: 35px 0 15px;
+}
+
+.page small,
+.page span {
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.imagePage {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  background: #e9f3f1;
+}
+
+.imagePage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #102f38;
+  border-radius: 3px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.controls button {
+  padding: 10px 20px;
+  border: 1px solid #659298;
+  border-radius: 8px;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.controls button:hover {
+  background: #20525b;
+  color: white;
+}
+.imagePage {
+  position: relative;
+  padding: 22px 18px 28px;
+  background: linear-gradient(
+    90deg, #c7d5d2 0%, #faf9f4 8%, #fff 95%, #e1e6e2
+  );
+  overflow: hidden;
+}
+
+.imagePage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 1px;
+  background: #102f38;
+  box-shadow: 0 2px 8px #00000020;
+}
+
+.imagePage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg, #00000025, transparent 12%, transparent 95%, #00000010
+  );
+}

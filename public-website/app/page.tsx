@@ -1,3 +1,24 @@
-import Link from 'next/link';
-const modules = [['Imaging','DICOM, X-ray, CT, MRI and ultrasound research'],['Research','Datasets, experiments and reproducible models'],['Analytics','Explore structured data and visualize results'],['Prediction','Evaluate experimental model outputs'],['3D & Video','Volumetric imaging and multimedia research'],['Integrations','Future FHIR, PACS and Power BI connections']];
-export default function Home(){return <main className="min-h-screen bg-white text-slate-900"><header className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-6"><Link href="/" className="text-xl font-bold text-cyan-800">✚ PAPEL AI <small className="block text-xs tracking-widest">MEDICAL ASSISTANT</small></Link><nav className="flex flex-wrap gap-5 text-sm"><Link href="/platform">All workspaces</Link><a href="#technology">Technology</a><Link href="/advanced" className="text-cyan-400">Advanced ETL</Link> <Link href="/analytics">Data Analytics</Link><a href="#research">Research</a><Link href="/workspace" className="font-bold text-cyan-800">Research workspace →</Link></nav></header><section className="bg-slate-950 text-white"><div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-24 md:grid-cols-2"><div><p className="mb-6 text-cyan-300">RESEARCH PLATFORM / VISION 2050</p><h1 className="text-5xl font-bold leading-tight md:text-7xl">Intelligent imaging.<br/><span className="text-cyan-300">Human-led care.</span></h1><p className="my-8 text-lg text-slate-300">An environment for exploring medical imaging, machine learning and healthcare data science.</p><Link href="/workspace" className="inline-block rounded-xl bg-cyan-300 px-6 py-4 font-bold text-slate-950">Explore research workspace</Link><p className="mt-6 text-sm text-slate-400">Research prototype. Not for clinical use.</p></div><div className="rounded-3xl border border-cyan-900 bg-slate-900 p-8"><svg viewBox="0 0 340 260" role="img" aria-label="Abstract imaging research network" className="w-full"><g fill="none" stroke="#22d3ee">{[35,60,85,110].map(r=><ellipse key={r} cx="170" cy="130" rx={r} ry={r*.72} transform="rotate(-25 170 130)" opacity={.6}/>)}<path d="M30 130H310M170 10V250" opacity=".3"/>{Array.from({length:12},(_,i)=><circle key={i} cx={170+100*Math.cos(i*Math.PI/6)} cy={130+75*Math.sin(i*Math.PI/6)} r="4" fill="#67e8f9"/>)}</g></svg><p className="text-center text-cyan-200">Imaging · Intelligence · Discovery</p></div></div></section><section id="technology" className="mx-auto max-w-7xl px-6 py-20"><h2 className="mb-8 text-3xl font-bold">Platform capabilities</h2><div className="grid gap-5 md:grid-cols-3">{modules.map(([name,desc])=><article key={name} className="rounded-2xl border border-slate-200 p-7"><h3 className="text-xl font-bold text-cyan-800">{name}</h3><p className="mt-3 text-slate-600">{desc}</p><p className="mt-4 text-xs text-slate-500">Research roadmap</p></article>)}</div></section><section id="research" className="bg-slate-100 px-6 py-16 text-center"><h2 className="text-3xl font-bold">Build reproducible research</h2><p className="my-5">Start with synthetic data and non-sensitive reference media.</p><Link href="/workspace" className="font-bold text-cyan-800">Open workspace →</Link></section><footer className="p-8 text-center text-sm">© 2026 Papel AI Medical Assistant · Research only</footer></main>}
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
+
+import Hero from "../components/home/Hero";
+import Features from "../components/home/Features";
+import Technology from "../components/home/Technology";
+import Research from "../components/home/Research";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <Header />
+
+      <main>
+        <Hero />
+        <Features />
+        <Technology />
+        <Research />
+      </main>
+
+      <Footer />
+    </div>
+  );
+}

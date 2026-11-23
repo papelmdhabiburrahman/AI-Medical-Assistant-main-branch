@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import type { ReactNode } from "react";
+import ThemeProvider from "../components/providers/ThemeProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,19 +15,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Papel AI Medical Assistant",
+  title: {
+    default: "Papel AI Medical Assistant",
+    template: "%s | Papel AI Medical Assistant",
+  },
   description:
-    "Developing artificial intelligence solutions for medical imaging, image analysis, and clinical decision support.",
+    "A research platform for medical imaging, artificial intelligence and healthcare data science.",
   applicationName: "Papel AI Medical Assistant",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
